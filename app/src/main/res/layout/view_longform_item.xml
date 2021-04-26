@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.chriscalderonh.andersonscodechallenge.searchacronym.ui.model.VmLongform" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvItemLongform"
+            style="@style/Font_18sp_Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.longform}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tvItemFrequencyLabel"
+            style="@style/Font_14sp_Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/frequency"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvItemFrequency"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemLongform" />
+
+        <TextView
+            android:id="@+id/tvItemFrequency"
+            style="@style/Font_14sp_Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@{item.frequency}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemFrequencyLabel"
+            app:layout_constraintEnd_toStartOf="@+id/separator"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tvItemFrequencyLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvItemFrequencyLabel"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/separator"
+            style="@style/Font_14sp_Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:text="@string/dot"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemFrequencyLabel"
+            app:layout_constraintEnd_toStartOf="@+id/tvItemSinceLabel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvItemFrequency"
+            app:layout_constraintTop_toTopOf="@+id/tvItemFrequencyLabel" />
+
+        <TextView
+            android:id="@+id/tvItemSinceLabel"
+            style="@style/Font_14sp_Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/since"
+            app:layout_constraintBottom_toBottomOf="@+id/separator"
+            app:layout_constraintEnd_toStartOf="@+id/tvItemSince"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/separator"
+            app:layout_constraintTop_toTopOf="@+id/separator" />
+
+        <TextView
+            android:id="@+id/tvItemSince"
+            style="@style/Font_14sp_Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@{item.since}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemSinceLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvItemSinceLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvItemSinceLabel"
+            tools:text="@tools:sample/full_names" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

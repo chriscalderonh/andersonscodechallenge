@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Andersons Code Challenge</string>
+    <string name="sorry_an_error_occurred">We are sorry, an error occurred</string>
+    <string name="s_continue">Continue</string>
+    <string name="search_acronym">Search acronym</string>
+    <string name="acronyms_or_abbreviations">Acronyms or abbreviations…</string>
+    <string name="dot">·</string>
+    <string name="sorry_there_seems_to_be_a_problem_with_your_connection">Sorry, there seems to be a problem with your connection</string>
+    <string name="sorry_unexpected_error">Sorry, there seems to be an unexpected error, try again later</string>
+    <string name="frequency">frequency:</string>
+    <string name="since">since:</string>
+    <string name="no_information_found">No information found</string>
+</resources>

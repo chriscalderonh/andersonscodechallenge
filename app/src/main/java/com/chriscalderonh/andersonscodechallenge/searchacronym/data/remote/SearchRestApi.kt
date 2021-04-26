@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface SearchRestApi {
 
     @GET("software/acromine/dictionary.py")
-    fun searchAcronym(@Query("sf") shortform: String): Single<Search>
+    fun searchAcronym(@Query("sf") shortform: String): Single<List<Search>>
 }

@@ -8,6 +8,9 @@ import com.chriscalderonh.andersonscodechallenge.searchacronym.data.remote.model
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainLfVariation
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainLongform
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainSearch
+import com.chriscalderonh.andersonscodechallenge.searchacronym.ui.model.UiLfVariation
+import com.chriscalderonh.andersonscodechallenge.searchacronym.ui.model.UiLongform
+import com.chriscalderonh.andersonscodechallenge.searchacronym.ui.model.UiSearch
 
 object SearchFactory {
 
@@ -53,5 +56,32 @@ object SearchFactory {
         generateInt(),
         generateString(),
         generateInt()
+    )
+
+    fun generateUiSearch() = UiSearch(
+        generateString(),
+        generateUiLongforms()
+    )
+
+    fun generateUiLongforms() = (0 .. 10).map { generateUiLongform() }
+
+    private fun generateUiLongform() = UiLongform(
+        generateInt(),
+        generateString(),
+        generateUiVariations(),
+        generateInt()
+    )
+
+    private fun generateUiVariations() = (0 .. 10).map { generateUiLfVariation() }
+
+    private fun generateUiLfVariation() = UiLfVariation(
+        generateInt(),
+        generateString(),
+        generateInt()
+    )
+
+    fun generateEmptyUiSearch() = UiSearch(
+        generateString(),
+        emptyList()
     )
 }

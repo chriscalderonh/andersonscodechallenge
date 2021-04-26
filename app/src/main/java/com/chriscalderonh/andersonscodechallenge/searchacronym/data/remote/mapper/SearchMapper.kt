@@ -6,8 +6,9 @@ import com.chriscalderonh.andersonscodechallenge.searchacronym.data.remote.model
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainLfVariation
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainLongform
 import com.chriscalderonh.andersonscodechallenge.searchacronym.domain.model.DomainSearch
+import javax.inject.Inject
 
-class SearchMapper {
+class SearchMapper @Inject constructor(){
 
     fun Search.fromRemoteToDomain() = DomainSearch(
         shortform = sf,

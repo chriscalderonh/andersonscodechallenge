@@ -1,11 +1,11 @@
 package com.chriscalderonh.andersonscodechallenge.di
 
-import com.chriscalderonh.andersonscodechallenge.MainApplication
+import android.content.Context
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class])
+@Component(modules = [ContextModule::class])
 interface AppComponent {
-    fun inject(app: MainApplication)
+    fun inject(): Context
 }

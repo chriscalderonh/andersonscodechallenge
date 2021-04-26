@@ -16,14 +16,14 @@ class SearchRemoteImplTest {
     fun `given acronym, when searchAcronym, then returns data`() {
         val acronym = generateString()
         val search = generateSearch()
-        stubRestApiSearchAcronym(acronym, Single.just(search))
+        stubRestApiSearchAcronym(acronym, Single.just(arrayListOf(search)))
 
         val testObserver = searchRemoteImpl.searchAcronym(acronym).test()
 
         testObserver.assertValue(search)
     }
 
-    private fun stubRestApiSearchAcronym(acronym: String, response: Single<Search>) {
+    private fun stubRestApiSearchAcronym(acronym: String, response: Single<List<Search>>) {
         whenever(restApi.searchAcronym(acronym)).thenReturn(response)
     }
 }
